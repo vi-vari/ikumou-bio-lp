@@ -4,45 +4,49 @@
  * - 背景色: #eaf4e7
  * - コンテンツ幅: 690px (モバイルファースト)
  * - LINEボタンリンク: https://lin.ee/nDByzfQ (同一タブ遷移)
+ * - 画像: /images/ ディレクトリ（GitHub Pages対応）
  */
 
 const LINE_URL = "https://lin.ee/nDByzfQ";
 
-// Asset URL mapping (manus-storage paths)
+// Asset paths (public/images/ directory - works on both local dev and GitHub Pages)
+const BASE = import.meta.env.BASE_URL;
+const img = (filename: string) => `${BASE}images/${filename}`;
+
 const ASSETS = {
-  fv: "/manus-storage/188-31_33e78537.webp",          // FV (ファーストビュー)
-  price1: "/manus-storage/180-12_32bd831a.webp",       // このページ限定 初回2,980円
-  lineBtn1: "/manus-storage/180-14_9081dab2.webp",     // LINE予約ボタン
-  clinic: "/manus-storage/180-17_0b5d3bc9.webp",       // 院内写真
-  sec19: "/manus-storage/180-19_ac18034e.webp",        // セクション
-  sec21: "/manus-storage/180-21_2f332db9.webp",        // セクション
-  sec23: "/manus-storage/180-23_e32e5b17.webp",        // セクション
-  enpo: "/manus-storage/196-4_0fe64547.webp",          // 遠方からの来院
-  price2: "/manus-storage/180-27_ee7b6718.webp",       // 価格バナー繰り返し
-  lineBtn2: "/manus-storage/180-29_8e75f7de.webp",     // LINE予約ボタン繰り返し
-  sec31: "/manus-storage/180-31_62ad23c7.webp",        // セクション
-  sec33: "/manus-storage/180-33_2a4a81bd.webp",        // セクション
-  sec35: "/manus-storage/180-35_ab037c2b.webp",        // セクション
-  sec37: "/manus-storage/180-37_1b81913b.webp",        // セクション
-  sec39: "/manus-storage/180-39_06a776ae.webp",        // セクション
-  sec41: "/manus-storage/180-41_84334858.webp",        // セクション
-  sec43: "/manus-storage/180-43_04c19874.webp",        // セクション
-  price3: "/manus-storage/180-45_e0c25987.webp",       // 価格バナー繰り返し
-  lineBtn3: "/manus-storage/180-47_dbeffb2c.webp",     // LINE予約ボタン繰り返し
-  sec49: "/manus-storage/180-49_b7ba6514.webp",        // セクション
-  sec51: "/manus-storage/180-51_322f348c.webp",        // セクション
-  price4: "/manus-storage/180-53_6ad2f165.webp",       // 価格バナー繰り返し
-  sec55: "/manus-storage/180-55_89f04758.webp",        // セクション
-  lineBtn4: "/manus-storage/180-57_669bb234.webp",     // LINE予約ボタン繰り返し
-  sec59: "/manus-storage/180-59_28241ef9.webp",        // セクション（大）
-  caution: "/manus-storage/188-26_189d93f8.webp",      // 注意点（限定5名様）
-  price5: "/manus-storage/180-63_b0cd541f.webp",       // 価格バナー繰り返し
-  lineBtn5: "/manus-storage/180-65_290872fd.webp",     // LINE予約ボタン繰り返し
-  lineBtnLg: "/manus-storage/180-67_d86e8a5e.webp",   // LINE予約ボタン（大）
-  sec69: "/manus-storage/180-69_64d16e31.webp",        // セクション
-  price6: "/manus-storage/180-71_f0a416b2.webp",       // 価格バナー繰り返し
-  lineBtn6: "/manus-storage/180-73_a991e775.webp",     // LINE予約ボタン繰り返し
-  store: "/manus-storage/196-8_18ef378a.webp",         // 店舗情報
+  fv: img("188-31.webp"),          // FV (ファーストビュー)
+  price1: img("180-12.webp"),       // このページ限定 初回2,980円
+  lineBtn1: img("180-14.webp"),     // LINE予約ボタン
+  clinic: img("180-17.webp"),       // 院内写真
+  sec19: img("180-19.webp"),        // セクション
+  sec21: img("180-21.webp"),        // セクション
+  sec23: img("180-23.webp"),        // セクション
+  enpo: img("196-4.webp"),          // 遠方からの来院
+  price2: img("180-27.webp"),       // 価格バナー繰り返し
+  lineBtn2: img("180-29.webp"),     // LINE予約ボタン繰り返し
+  sec31: img("180-31.webp"),        // セクション
+  sec33: img("180-33.webp"),        // セクション
+  sec35: img("180-35.webp"),        // セクション
+  sec37: img("180-37.webp"),        // セクション
+  sec39: img("180-39.webp"),        // セクション
+  sec41: img("180-41.webp"),        // セクション
+  sec43: img("180-43.webp"),        // セクション
+  price3: img("180-45.webp"),       // 価格バナー繰り返し
+  lineBtn3: img("180-47.webp"),     // LINE予約ボタン繰り返し
+  sec49: img("180-49.webp"),        // セクション
+  sec51: img("180-51.webp"),        // セクション
+  price4: img("180-53.webp"),       // 価格バナー繰り返し
+  sec55: img("180-55.webp"),        // セクション
+  lineBtn4: img("180-57.webp"),     // LINE予約ボタン繰り返し
+  sec59: img("180-59.webp"),        // セクション（大）
+  caution: img("188-26.webp"),      // 注意点（限定5名様）
+  price5: img("180-63.webp"),       // 価格バナー繰り返し
+  lineBtn5: img("180-65.webp"),     // LINE予約ボタン繰り返し
+  lineBtnLg: img("180-67.webp"),    // LINE予約ボタン（大）
+  sec69: img("180-69.webp"),        // セクション
+  price6: img("180-71.webp"),       // 価格バナー繰り返し
+  lineBtn6: img("180-73.webp"),     // LINE予約ボタン繰り返し
+  store: img("196-8.webp"),         // 店舗情報
 };
 
 // LINEボタンコンポーネント（同一タブ遷移）
